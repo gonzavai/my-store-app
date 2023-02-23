@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PageInfo } from 'src/app/interfaces/page-info';
+import { PageInfoService } from 'src/app/services/page-info.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  pageInfo: PageInfo = this.pageInfoService.pageInfo;
+
+  constructor(
+    public pageInfoService: PageInfoService,
+    public _products: ProductsService
+    ) { 
+  }
 
   ngOnInit(): void {
+  }
+
+  findProduct(value: string): void {
+    console.log("BUSQUEDA:", value);
+    this._products.filterByName(value);
   }
 
 }

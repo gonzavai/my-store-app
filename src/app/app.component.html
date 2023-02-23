@@ -1,5 +1,8 @@
-<app-header></app-header>
-<section class="ae-container-fluid rk-main">
-  <app-portfolio></app-portfolio>
-</section>
-<app-footer></app-footer>
+<ng-container *ngIf="_pageInfo.isInfoLoaded">
+  <app-header></app-header>
+  <section class="ae-container-fluid rk-main">
+    <router-outlet></router-outlet>
+  </section>
+  <app-footer></app-footer>
+</ng-container>
+

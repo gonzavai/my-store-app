@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  constructor(public _products: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
+    this._products.getProductosIdx();
   }
 
 }

@@ -2,11 +2,11 @@
   <div class="ae-grid ae-grid--collapse">
     <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
       <ul class="rk-menu rk-footer-menu">
-        <li class="rk-menu__item">
-          <a href="about.html" class="rk-menu__link">About</a>
+        <li class="rk-menu__item" routerLinkActive="active">
+          <a routerLink="home" class="rk-menu__link">Home</a>
         </li>
-        <li class="rk-menu__item">
-          <a href="documentation.html" class="rk-menu__link">Docs</a>
+        <li class="rk-menu__item" routerLinkActive="active">
+          <a routerLink="about" class="rk-menu__link">About</a>
         </li>
         <li class="rk-menu__item">
           <a href="contact.html" class="rk-menu__link">Contact</a>
@@ -19,32 +19,27 @@
       </p>
     </div>
     <div class="ae-grid__item item-lg-4 au-xs-ta-center">
-      <a title="social-link" href="#0" class="rk-social-btn">
+      <a title="social-link" [href]="pageInfo.facebook" target="_blank" rel="noopener" class="rk-social-btn">
         <svg>
           <use xlink:href="assets/img/symbols.svg#icon-facebook"></use></svg></a
       >
-      <a title="social-link" href="#0" class="rk-social-btn">
+      <a title="social-link" [href]="pageInfo.twitter" target="_blank" rel="noopener" class="rk-social-btn">
         <svg>
           <use xlink:href="assets/img/symbols.svg#icon-twitter"></use></svg></a
       >
-      <a title="social-link" href="#0" class="rk-social-btn">
+      <a title="social-link" [href]="pageInfo.instagram" target="_blank" rel="noopener" class="rk-social-btn">
         <svg>
           <use
             xlink:href="assets/img/symbols.svg#icon-pinterest"
           ></use></svg></a
       >
-      <a title="social-link" href="#0" class="rk-social-btn">
-        <svg>
-          <use xlink:href="assets/img/symbols.svg#icon-tumblr"></use>
-        </svg>
-    </a>
     </div>
     <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
       <p class="rk-footer__text rk-footer__contact">
         <span class="ae-u-bold">Email: </span
         ><span class="ae-u-bolder">
-          <a href="#0" class="rk-dark-color"
-            >contact@urkuportfolio.com
+          <a href="mailTo:{{pageInfo.mail}}" class="rk-dark-color"
+            >{{pageInfo.mail}}
           </a></span
         >
       </p>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PageInfoService } from './services/page-info.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-store-app';
+  constructor(public _pageInfo: PageInfoService) {
+    _pageInfo.getPageInfo();
+  }
 }
