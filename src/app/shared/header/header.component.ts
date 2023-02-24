@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
   }
 
   findProduct(value: string): void {
-    console.log("BUSQUEDA:", value);
     this._products.filterByName(value);
   }
 
