@@ -18,7 +18,7 @@ export class PageInfoService {
 
   getPageInfo() {
     this.http
-      .get('https://angular-shoppingstore-default-rtdb.firebaseio.com/page-info')
+      .get('https://angular-shoppingstore-default-rtdb.firebaseio.com/page-info.json')
       .subscribe((resp: PageInfo) => {
         this.isInfoLoaded = true;
         this.pageInfo = resp;
