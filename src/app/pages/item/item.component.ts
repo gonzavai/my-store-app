@@ -17,9 +17,7 @@ export class ItemComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('Entro a Item PAge');
     this.activatedRoute.queryParamMap.subscribe((param) => {
-      console.log("CODIGO DE PRODUCTO PARAM", param.get('cod'));
       this.codProd = param.get('cod')?? '';
       this._products.getProductoByCod(this.codProd)
     });

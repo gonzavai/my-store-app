@@ -22,7 +22,6 @@ export class PageInfoService {
       .subscribe((resp: PageInfo) => {
         this.isInfoLoaded = true;
         this.pageInfo = resp;
-        console.log('Page Info loaded', this.pageInfo);
       });
   }
 
@@ -32,12 +31,9 @@ export class PageInfoService {
         'https://angular-shoppingstore-default-rtdb.firebaseio.com/staff.json'
       )
       .subscribe((resp: any) => {
-        console.log('Respuesta del servicio', resp);
         this.staffInfo.staff = resp;
-        console.log('Staf Info loaded', this.staffInfo);
         if (this.staffInfo.staff) {
           this.teamInfo$.next(this.staffInfo.staff);
-          console.log('++++ TEAM INFO:', this.staffInfo.staff);
         }
       });
   }

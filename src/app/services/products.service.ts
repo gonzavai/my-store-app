@@ -32,7 +32,6 @@ export class ProductsService {
         'https://angular-shoppingstore-default-rtdb.firebaseio.com/products_idx.json'
       )
       .subscribe((resp) => {
-        console.log('Respuesta obtenida prods_idx', resp);
         this.productsIdx$.next(
           Object.values(resp).map((item: Product) => item)
         );
@@ -48,13 +47,11 @@ export class ProductsService {
         `https://angular-shoppingstore-default-rtdb.firebaseio.com/products/${searchCode}.json`
       )
       .subscribe((resp: Product) => {
-        console.log('Respuesta obtenida producto buscado', resp);
         this.selectedProduct$.next(resp);
       });
   }
 
   filterByName(title: string) {
-    console.log('En filtrado', this.productsValues$.getValue());
     const titleLower = title.toLocaleLowerCase();
     const filteredData = this.productsValues$
       .getValue()
